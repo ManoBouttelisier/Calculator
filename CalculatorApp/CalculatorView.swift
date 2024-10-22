@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CalculatorView: View {
     @State var name = ""
+    // @State private var CalcEngine
     
     var body: some View {
 
