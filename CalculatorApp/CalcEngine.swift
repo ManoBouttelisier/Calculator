@@ -1,13 +1,30 @@
-
 import Foundation
-
 @Observable
 
 class CalcEngine {
-    private var stack: [Double] = []
+    var stack: [Double] = []
     var result = ""
+    var temp: [String] = []
     
+    func push(_ value: Double) {
+        stack.append(value)
+        result.append("\(value)\n")
+    }
     
+    func addNumberText(getal: String){
+        result += "\(getal)"
+    }
+    
+    func addNumber(){
+        stack.append(Double(result)!)
+        
+        
+    }
+    
+    func clearEngine() {
+        stack.removeAll()
+        result.removeAll()
+    }
     
     func optellen() {
         result.append("+\n")
@@ -51,8 +68,8 @@ class CalcEngine {
         }
     }
     
-    
-    
+    func clear() {
+        stack.removeAll()
+        result = ""
+    }
 }
-
-
